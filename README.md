@@ -7,20 +7,30 @@ Deze data is natuurlijk beperkt wanneer de app net gestart is maar kan snel groe
 
 ## app
 
-Ik wil graag een turn based multiplayer game maken met toevoegingen zoals data uit een weer api die het spel beinvloeden. 
-<!-- turnbased bestaat uit twee fase:
+Ik wil graag een multiplayer game maken met toevoegingen zoals data uit een weer api die het spel beinvloeden. 
+Piraten game waarbij speler kapitein is van een schip. Spelers varen over de zee en plunderen npc schepen. Met de plunder verbeteren zij hun schip. Andere spelers varen ook rond met hun piraten schip en kunnen worden aangevallen.
+<!-- turnbased be
 * interactie fase waarin de gebruikers hun beslissingen nemen
 * actie fase waarin acties plaatsvinden
 -->
-
+* Spelers bouwen/verbeteren schip
 * Spelers kunnen drop in drop out
-* Spelers kunnen elkaar aanvallen
+* Spelers kunnen aanvallen
 	* Spelers bepalen tactiek van te voren
-	* uitslag bepaald door statestiek en tactiek
+	* uitslag bepaald door statestiek en tactiek en weer(via api)
+* spelers zien de andere spelers varen en kunnen de andere uitdagen voor gevecht
 
-### gebruik
+
+### mvp
+* schip varen
+* meerdere spelers zichtbaar
+* een minimaal gevecht systeem
+### extra
+* nav naar andere spelers
+### gebruik binnen meteor
 * canvas
 * react
+
 
 ### inspiratie
 [moon.co](https://crater.io/posts/QFzyberEqu7mbLz56/multiplayer-space-game-made-with-meteor)
