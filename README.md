@@ -25,9 +25,12 @@ Piraten game waarbij speler kapitein is van een schip. Spelers varen over de zee
 * schip varen
 * meerdere spelers zichtbaar
 * een minimaal gevecht systeem
+
 ### extra
 * nav naar andere spelers
+
 ### gebruik binnen meteor
+
 * canvas
 * react
 
