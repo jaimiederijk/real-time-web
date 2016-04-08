@@ -15,8 +15,8 @@ Ik wil graag een turn based multiplayer game maken met toevoegingen zoals data u
 
 * Spelers kunnen drop in drop out
 * Spelers kunnen elkaar aanvallen
-** Spelers bepalen tactiek van te voren
-** uitslag bepaald door statestiek en tactiek
+	* Spelers bepalen tactiek van te voren
+	* uitslag bepaald door statestiek en tactiek
 
 ### gebruik
 * canvas
