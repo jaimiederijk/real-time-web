@@ -23,7 +23,7 @@ Piraten game waarbij speler kapitein is van een schip. Spelers varen over de zee
 
 ### mvp
 * schip varen
-* meerdere spelers zichtbaar
+* meerdere spelers tegelijk zichtbaar
 * een minimaal gevecht systeem
 
 ### extra
@@ -34,6 +34,20 @@ Piraten game waarbij speler kapitein is van een schip. Spelers varen over de zee
 * canvas
 * react
 
+### collections
+* world
+	* poi
+* users
+	* userdata
+	* shipid
+* npc
+	* npcdata
+	* shipid
+* ships
+	* hulltype
+	* upgrades
+	* name
+	* history
 
 ### inspiratie
 [moon.co](https://crater.io/posts/QFzyberEqu7mbLz56/multiplayer-space-game-made-with-meteor)
