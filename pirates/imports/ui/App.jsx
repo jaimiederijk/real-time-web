@@ -13,27 +13,40 @@ import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
 // App component - represents the whole app
 class App extends Component {
+  findUserShip () {
 
+    for (var i = 0; i < this.props.ships.length; i++) {
+
+      if (this.props.ships[i].owner==Meteor.user()._id) {
+
+        return true
+      };
+    };
+  }
   renderShips() {
     return this.props.ships.map((ship) => (
       <Ship key={ship._id} ship={ship} />
     ));
   }
-  renderChooseShip() {
-    if (this.props.ships.findOne({owner:Meteor.userId()})) {
-      return <ChooseShip />
-    };
-  }
-          // <input type="radio" name="hull" ref="hullType" value="Schooner" checked/> Schooner
-          // <input type="radio" name="hull" ref="hullType" value="Brig"/> Brig
+  // renderChooseShip() {
+  //   if (this.findUserShip()) {
+  //     return {this.renderChooseShip()}
+  //   };
+  // }
+
   render() {
     return (
       <div className="container">
         <header>
           <AccountsUIWrapper />
-          <h1>Choose your ship</h1>
+
         </header>
-          {this.renderChooseShip()}
+
+          {this.props.currentUser && !this.findUserShip() ?
+            <div><h1>Choose your ship</h1>
+            <ChooseShip /></div>
+             :""
+          }
         <ul>
           {this.renderShips()}
         </ul>
@@ -50,6 +63,7 @@ App.propTypes = {
 export default createContainer(() => {
   return {
     tasks:Tasks.find({}).fetch(),
-    ships:Ships.find({}).fetch()
+    ships:Ships.find({}).fetch(),
+    currentUser: Meteor.user()
   };
 },App);
