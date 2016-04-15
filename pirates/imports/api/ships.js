@@ -13,13 +13,17 @@ Meteor.methods({
     if (! Meteor.userId()) {
       throw new Meteor.Error('not-authorized');
     }
+    var xStart = Math.floor(Math.random()*500);
+    var yStart = Math.floor(Math.random()*500);
+    var startPos = {"x":xStart,"y":yStart};
 
     Ships.insert({
-      shipname: shipName,
-      hulltype: hullType,
-      createdAt: new Date(),
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
+      "shipname": shipName,
+      "hulltype": hullType,
+      "position":startPos,
+      "createdAt": new Date(),
+      "owner": Meteor.userId(),
+      "username": Meteor.user().username,
     });
   },
   'Ships.remove'(taskId) {

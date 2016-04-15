@@ -41,15 +41,16 @@ class App extends Component {
           <AccountsUIWrapper />
 
         </header>
-
+        <section>
           {this.props.currentUser && !this.findUserShip() ?
             <div><h1>Choose your ship</h1>
             <ChooseShip /></div>
              :""
           }
-        <ul>
+        </section>
+        <section>
           {this.renderShips()}
-        </ul>
+        </section>
       </div>
     );
   }

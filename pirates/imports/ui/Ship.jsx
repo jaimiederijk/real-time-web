@@ -6,7 +6,7 @@ export default class Ship extends Component {
       <div>
       	<h2>{this.props.ship.shipname}</h2>
       	<p>Shiptype: {this.props.ship.hulltype}</p>
-
+      	<p><span>x:{this.props.ship.position.x}</span><span>y:{this.props.position.ship.y}</span></p>
       </div>
     );
   }
