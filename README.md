@@ -49,5 +49,8 @@ Piraten game waarbij speler kapitein is van een schip. Spelers varen over de zee
 	* name
 	* history
 
+### Structuur 
+[meteor structuur](http://guide.meteor.com/structure.html)
+
 ### inspiratie
 [moon.co](https://crater.io/posts/QFzyberEqu7mbLz56/multiplayer-space-game-made-with-meteor)
