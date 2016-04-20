@@ -2,12 +2,11 @@ import React, { Component,PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import { Tasks } from '../api/tasks.js';
 import { Ships } from '../api/ships.js';
 import { Weather } from '../api/weather.js';
 
-import Task from './Task.jsx';
 import Ship from './Ship.jsx';
+import LocalWeather from './Weather.jsx';
 
 import ChooseShip from './ChooseShip.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
@@ -18,13 +17,6 @@ class App extends Component {
     if (Meteor.user().profile && Meteor.user().profile.shipId) {
       return true
     };
-    // for (var i = 0; i < this.props.ships.length; i++) {
-
-    //   if (this.props.ships[i].owner==Meteor.user()._id) {
-
-        
-    //   };
-    // };
   }
   renderShips() {
     return this.props.ships.map(function(ship) {
@@ -41,12 +33,12 @@ class App extends Component {
       };
     });
   }
-  // renderChooseShip() {
-  //   if (this.findUserShip()) {
-  //     return {this.renderChooseShip()}
-  //   };
-  // }
-
+  renderWeather() {
+    return this.props.weather.map(function(weather) {
+      return  <LocalWeather key={weather._id} weather={weather} />
+    });
+  }
+//<LocalWeather weather={this.props.weather} />
   render() {
     return (
       <div className="container">
@@ -56,6 +48,7 @@ class App extends Component {
         </header>
         {this.props.currentUser ?
           <section>
+            {this.renderWeather()}
             <section>
               {!this.findUserShip() ?
                 <div>
@@ -79,7 +72,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  tasks: PropTypes.array.isRequired,
+  weather: PropTypes.array.isRequired,
   ships: PropTypes.array.isRequired
 };
 
@@ -88,7 +81,6 @@ export default createContainer(() => {
   Meteor.subscribe('weather');
   Meteor.subscribe('ships');
   return {
-    tasks:Tasks.find({}).fetch(),
     weather:Weather.find({}).fetch(),
     ships:Ships.find({}).fetch(),
     currentUser: Meteor.user()
