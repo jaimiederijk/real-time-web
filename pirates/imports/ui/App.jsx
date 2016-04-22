@@ -10,9 +10,11 @@ import LocalWeather from './Weather.jsx';
 
 import ChooseShip from './ChooseShip.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+import MovementUI from './MovementUI.jsx';
 
 // App component - represents the whole app
 class App extends Component {
+
   findUserShip () {
     if (Meteor.user().profile && Meteor.user().profile.shipId) {
       return true
@@ -59,6 +61,7 @@ class App extends Component {
                 <section>
                   <h2>Your ship</h2>
                   {this.renderYourShip()}
+                  <MovementUI />
                   <h2>Enemy ship</h2>
                   {this.renderShips()}
                 </section>

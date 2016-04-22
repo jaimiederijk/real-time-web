@@ -55,6 +55,6 @@ Meteor.methods({
     var newY = oldY + y;
     var newPos = {"x" : newX,"y":newY};
 
-    Ships.update(shipId, {$set: {profile: {"position":newPos}}});
+    Ships.update(shipId, {$set: {"position":newPos}});
   }
 });

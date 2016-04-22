@@ -5,5 +5,6 @@ import '../imports/api/ships.js';
 import '../imports/api/weather.js';
 
 Meteor.startup(() => {
-  // code to run on server at startup
+  
+  var weatherInterval = Meteor.setInterval(Meteor.call("checkWeather"), 600000);//every 10 min get update
 });

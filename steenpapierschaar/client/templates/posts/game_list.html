@@ -1,0 +1,15 @@
+<template name="gameList">
+ <div class="posts">
+ 	<div class="post">
+ 		<h2>Game info</h2>
+ 		<p>Multiplayer steen papier schaar.</p>
+ 		<p>Om te spelen moet je ingelogd zijn.</p>
+		<p>Submit een game om te starten. De game wordt vervolgens op de homepagina gezet waar alleen een andere gebruiker erop kan reageren. Jouw keuze is hierbij nog niet zichtbaar. Wanneer een tweede speler heeft gereageerd wordt het resultaat bekend gemaakt.</p>
+ 	</div>
+ 	<section> 		
+		{{#each game}}
+			{{> gameItem}}
+		{{/each}}
+ 	</section>
+ </div>
+</template>

@@ -1,0 +1,17 @@
+<template name="gameItem">
+	
+	<div class="post">
+		<h3>{{title}}</h3>
+		<p>submitted by {{author}}</p>
+	 	{{#if valueTrue}}
+	 		<p>{{author}} koos <span>{{value}}</span><img src="/images/{{value}}.png"></p>
+	 		<p>{{challenger}} koos <span>{{value2}}<img src="/images/{{value2}}.png"></span></p>
+	 	{{/if}}		
+			
+		<h2>{{result}}</h2>
+		{{#if allowChallenge}}
+			<a href="{{pathFor 'gameUpdate'}}">accept challenge</a>
+		{{/if}}
+	</div>
+
+</template>

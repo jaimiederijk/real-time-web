@@ -8,7 +8,7 @@ class CanvasComponent extends Component {
         const ctx = this.refs.canvas.getContext('2d');
         ctx.translate(110/2, 110/2);
 
-        ctx.rotate(this.props.weather.list[0].deg*Math.PI/180);
+        ctx.rotate(this.props.weather.wind.deg*Math.PI/180);
         ctx.translate(-110/2, -110/2);
         ctx.beginPath();
         
@@ -40,8 +40,8 @@ export default class LocalWeather extends Component {
   render() {
     return (
       <div>
-      	<h3>{this.props.weather.list[0].temp.day}</h3>
-        <h3>{this.props.weather.list[0].speed}</h3>
+      	<h3>{this.props.weather.main.temp}</h3>
+        <h3>{this.props.weather.wind.speed}</h3>
         <CanvasComponent weather={this.props.weather}/>
       </div>
     );

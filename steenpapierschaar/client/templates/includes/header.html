@@ -1,0 +1,15 @@
+<template name="header">
+	 <header>
+	 	<nav class="navbar">
+		 	<a class="navbar-brand" href="{{pathFor 'gameList'}}">Steen papier schaar</a>
+		 	{{#if currentUser}}
+			 	<a class="navbar-brand" href="{{pathFor 'gameSubmit'}}">submit "steen papier schaar" game</a>
+		 	{{/if}}
+		 	<div class="collapse navbar-collapse" id="navigation">
+			 	<ul class="nav navbar-nav navbar-right">
+		 			{{> loginButtons}}
+		 		</ul>
+		 	</div>
+	 	</nav>
+	</header>
+</template>

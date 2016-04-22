@@ -8,19 +8,25 @@ if (Meteor.isServer) {
   Meteor.publish('weather', function tasksPublication() {
     return Weather.find();
   });
-  if (Weather.find().count()<=0) {
 
-  }
 	 Meteor.methods({
 	    "checkWeather"() {
 	        this.unblock();
-	        Meteor.http.call("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=524901&appid=d55e532e359ca4e0b28bc4cf0ae34bce&units=metric",function(err,res) {
-	
+	        Meteor.http.call("GET", "http://api.openweathermap.org/data/2.5/weather?q=Amsterdam&appid=d55e532e359ca4e0b28bc4cf0ae34bce",function(err,res) {
+				console.log("new data")
 	        	Meteor.call('weather.insert',JSON.parse(res.content));
 	        });
 	    },
 	    "weather.insert"(data) {
-	    	Weather.insert (data);
+	    	if (Weather.find().count()<=0) {
+				Weather.insert (data);
+			} else {
+				Weather.update({"name":"Amsterdam"},{
+					$set:data
+				});//{city.name: "Moscow"},{$set: data}
+			}
+
+	    	
 	    }
 	});
 }
