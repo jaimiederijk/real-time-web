@@ -1,0 +1,54 @@
+/* CSS declarations go here */
+body {
+	margin:0;
+	font-family: sans-serif;
+	    color: #595959;
+}
+header {
+	background-color: rgb(92, 126, 88);
+	padding: 1em;
+}
+
+.games_container {
+	display: flex;
+  	flex-wrap: wrap;
+
+}
+.games_container > div {
+	margin: 1em;
+    padding: 1em;
+    background-color: rgb(188, 208, 226);
+}
+.creategame {
+	padding-left: 1em;
+	background-color: rgb(210, 168, 113);
+	padding-bottom: 2em;
+	padding-top: 1em;
+}
+img {
+	width: 5em;
+	    margin-left: 2em;
+}
+input[type="submit"] {
+	    position: relative;
+    top: -0.3em;
+	width: 10em;
+    height: 3em;
+    margin-left: 1em;
+    background-color: cadetblue;
+}
+input[type="text"] {
+	position: relative;
+    top: 0em;
+    font-size: 1.5em;
+}
+.createGame select {
+	font-size: 1.5em;
+}
+.GameResponse input {
+	top:0; 
+}
+#login-buttons {    
+	position: relative;
+    top: -1em;
+    font-size: 1.5em;}
